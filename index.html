@@ -15,7 +15,7 @@
 
         body {
             background-color: #06070a;
-            /* Textura de rejilla sutil estilo software de edición */
+            /* Textura de rejilla estilo software de edición con animación de movimiento */
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
@@ -23,19 +23,34 @@
             color: #e2e8f0;
             line-height: 1.6;
             overflow-x: hidden;
+            animation: backgroundScroll 60s linear infinite;
         }
 
-        /* Hero / Header con Estilo Pro y Luces Ambientales */
+        /* Movimiento ultra lento para el fondo */
+        @keyframes backgroundScroll {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 40px 40px; }
+        }
+
+        /* Hero / Header con Luces Ambientales en movimiento continuo */
         .hero {
-            min-height: 95vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 5rem 2rem;
             background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, rgba(6, 7, 10, 0) 50%),
                         radial-gradient(circle at 20% 80%, rgba(37, 211, 102, 0.05) 0%, rgba(6, 7, 10, 0) 50%);
+            background-size: 200% 200%;
             position: relative;
             border-bottom: 1px solid #1e293b;
+            animation: ambientGlow 25s ease infinite alternate;
+        }
+
+        @keyframes ambientGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .hero-content {
@@ -65,24 +80,32 @@
             font-weight: 900;
             letter-spacing: -1.5px;
             line-height: 1.05;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero-text p {
-            color: #94a3b8;
-            font-size: 1.15rem;
+        .hero-text .subtitle {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #3b82f6;
             margin-bottom: 1.5rem;
-            font-weight: 300;
-            text-wrap: pretty;
+            letter-spacing: -0.5px;
         }
 
-        .hero-text strong {
-            color: #ffffff;
-            font-weight: 600;
-            border-bottom: 1px dashed rgba(59, 130, 246, 0.6);
+        .hero-text p.tagline {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            max-width: 550px;
+        }
+
+        @media (max-width: 900px) {
+            .hero-text p.tagline {
+                margin: 0 auto 1.5rem auto;
+            }
         }
 
         /* Botones de Acción Estilizados */
@@ -141,7 +164,6 @@
             position: relative;
         }
 
-        /* Aura trasera brillante */
         .hero-image::after {
             content: '';
             position: absolute;
@@ -174,10 +196,6 @@
             object-fit: cover;
             scale: 1.05;
             transition: transform 0.5s ease;
-        }
-
-        .profile-wrapper:hover img {
-            transform: scale(1.08);
         }
 
         @keyframes morphing {
@@ -260,7 +278,6 @@
             box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
         }
 
-        /* Contenedores de Aspecto con Iframes fluidos */
         .video-box {
             position: relative;
             width: 100%;
@@ -269,13 +286,8 @@
             border-bottom: 1px solid #1e293b;
         }
 
-        .vertical-grid .video-box {
-            aspect-ratio: 9 / 16;
-        }
-
-        .horizontal-grid .video-box {
-            aspect-ratio: 16 / 9;
-        }
+        .vertical-grid .video-box { aspect-ratio: 9 / 16; }
+        .horizontal-grid .video-box { aspect-ratio: 16 / 9; }
 
         .video-box iframe {
             position: absolute;
@@ -303,20 +315,49 @@
             letter-spacing: -0.2px;
         }
 
+        /* Justificación estética del texto en tarjetas */
         .video-info p {
             font-size: 0.98rem;
             color: #94a3b8;
             font-weight: 300;
-            line-height: 1.5;
+            line-height: 1.6;
+            text-align: justify;
         }
 
-        /* Nueva Sección para la Agencia DEKAP */
+        /* Nueva Sección de Biografía Completa (Movida aquí abajo) */
+        .bio-section {
+            background: linear-gradient(135deg, rgba(10, 11, 18, 0.6) 0%, rgba(15, 17, 26, 0.6) 100%);
+            border: 1px solid #1e293b;
+            border-radius: 28px;
+            padding: 3.5rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .bio-section p {
+            color: #94a3b8;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bio-section strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* Sección de la Agencia DEKAP */
         .dekap-section {
             background: linear-gradient(135deg, rgba(15, 17, 26, 0.8) 0%, rgba(22, 25, 34, 0.8) 100%);
             border: 1px solid #1e293b;
             border-radius: 28px;
             padding: 3.5rem;
-            margin-top: 4rem;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
             position: relative;
             overflow: hidden;
@@ -344,11 +385,17 @@
             gap: 12px;
         }
 
+        /* Justificación estética del texto en Agencia */
         .dekap-section p {
             color: #94a3b8;
             font-size: 1.15rem;
             line-height: 1.8;
+            text-align: justify;
             margin-bottom: 0;
+        }
+
+        .dekap-section strong {
+            color: #ffffff;
         }
 
         /* Footer Elegant con Llamado a la Acción */
@@ -397,15 +444,15 @@
 </head>
 <body>
 
-    <!-- SECCIÓN SOBRE MÍ / HERO -->
+    <!-- SECCIÓN HERO COMPACTA Y ENFOCADA -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
                 <h1>DEIKER SUAREZ</h1>
-                <p>Soy Deiker Suárez. Vivo obsesionado por la historia, por cómo se estructura y por el impacto emocional que deja en el espectador. En el montaje audiovisual, entiendo perfectamente que <strong>cada detalle importa</strong>. Un frame de más, un efecto de sonido (SFX) fuera de tiempo o una mala selección de ritmo pueden potenciar o destruir por completo el mensaje de un video.</p>
-                <p>Cuento con amplia experiencia editando con precisión quirúrgica para <strong>equipos y campañas deportivas, supermercados, luncherías, marcas personales, videos testimoniales, resúmenes de eventos, teasers de intriga y producciones de XV años</strong>. Además, integro herramientas de <strong>Inteligencia Artificial (IA)</strong> avanzadas para el diseño de efectos visuales únicos y transiciones fluidas que elevan el estándar técnico de cada entrega.</p>
+                <div class="subtitle">Editor de Videos</div>
+                <p class="tagline">Apasionado por la estructura de las historias y por el impacto emocional preciso que transforma a cada espectador.</p>
                 <div class="cta-buttons">
-                    <a href="https://wa.me/584127005624?text=Hola%20Deiker,%20vi%20tu%20portafolio%20y%20me%20interesa%20un%2520proyecto" target="_blank" class="btn btn-primary">
+                    <a href="https://wa.me/584127005624?text=Hola%20Deiker,%20vi%20tu%20portafolio%20y%20me%20interesa%20un%20proyecto" target="_blank" class="btn btn-primary">
                         Contactar por WhatsApp
                     </a>
                     <a href="#proyectos" class="btn btn-secondary">Ver Proyectos</a>
@@ -413,7 +460,6 @@
             </div>
             <div class="hero-image">
                 <div class="profile-wrapper">
-                    <!-- Enlace corregido usando la API de miniaturas de Google Drive para forzar visualización directa estable -->
                     <img src="https://drive.google.com/thumbnail?sz=w1000&id=1e1ELAB1PNpcg5FGksEIizmW-h8REhDNY" alt="Deiker Suarez" onerror="this.src='https://drive.google.com/file/d/1e1ELAB1PNpcg5FGksEIizmW-h8REhDNY/view?usp=sharing'">
                 </div>
             </div>
@@ -497,7 +543,6 @@
 
         </div>
 
-
         <!-- FORMATO HORIZONTAL -->
         <div class="section-header">
             <h2>Formato Horizontal (YouTube / Corporativo / Spots)</h2>
@@ -529,6 +574,15 @@
 
         </div>
 
+        <!-- SECCIÓN BIOGRAFÍA (MOVIDA DESPUÉS DE LOS PROYECTOS) -->
+        <div class="section-header">
+            <h2>Sobre Mí</h2>
+        </div>
+        <div class="bio-section">
+            <p>Soy Deiker Suárez. Vivo obsesionado por la historia, por cómo se estructura y por el impacto emocional que deja en el espectador. En el montaje audiovisual, entiendo perfectamente que <strong>cada detalle importa</strong>. Un frame de más, un efecto de sonido (SFX) fuera de tiempo o una mala selección de ritmo pueden potenciar o destruir por completo el mensaje de un video.</p>
+            <p>Cuento con amplia experiencia editando con precisión quirúrgica para <strong>equipos y campañas deportivas, supermercados, luncherías, marcas personales, videos testimoniales, resúmenes de eventos, teasers de intriga y producciones de XV años</strong>. Además, integro herramientas de <strong>Inteligencia Artificial (IA)</strong> avanzadas para el diseño de efectos visuales únicos y transiciones fluidas que elevan el estándar técnico de cada entrega.</p>
+        </div>
+
         <!-- SECCIÓN: DEKAP AGENCY -->
         <div class="dekap-section">
             <h3>DEKAP</h3>
@@ -537,7 +591,7 @@
 
     </div>
 
-    <!-- FOOTER CON TU NUEVO CTA -->
+    <!-- FOOTER CON LLAMADO A LA ACCIÓN -->
     <footer>
         <div class="footer-cta">
             <h2>¿Listo para contar tu historia con impacto?</h2>
