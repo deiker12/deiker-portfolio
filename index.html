@@ -22,11 +22,11 @@
 
         /* Hero / Header con Estilo Pro */
         .hero {
-            min-height: 80vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             background: radial-gradient(circle at top right, #1e293b 0%, #06070a 60%);
             position: relative;
             border-bottom: 1px solid #1e293b;
@@ -36,7 +36,7 @@
             max-width: 1200px;
             width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
             align-items: center;
         }
@@ -65,15 +65,21 @@
 
         .hero-text p {
             color: #94a3b8;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
             font-weight: 300;
+        }
+
+        .hero-text strong {
+            color: #ffffff;
+            font-weight: 600;
         }
 
         /* Botones de Acción Estilizados */
         .cta-buttons {
             display: flex;
             gap: 1rem;
+            margin-top: 2rem;
         }
 
         @media (max-width: 900px) {
@@ -94,7 +100,7 @@
         }
 
         .btn-primary {
-            background-color: #25d366; /* Color WhatsApp oficial */
+            background-color: #25d366;
             color: #ffffff;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
@@ -185,7 +191,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
             gap: 3rem;
-            margin-bottom: 4rem;
+            margin-bottom: 6rem;
         }
 
         @media (max-width: 600px) {
@@ -259,14 +265,96 @@
             font-weight: 300;
         }
 
-        /* Footer Elegant */
+        /* Nueva Sección para la Agencia DEKAP */
+        .dekap-section {
+            background: linear-gradient(135deg, #0f111a 0%, #161922 100%);
+            border: 1px solid #1e293b;
+            border-radius: 24px;
+            padding: 3rem;
+            margin-top: 4rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .dekap-section h3 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dekap-section h3::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+        }
+
+        .dekap-section p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .dekap-team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            border-top: 1px solid #1e293b;
+            padding-top: 2rem;
+        }
+
+        .team-member {
+            background: #06070a;
+            padding: 1.2rem;
+            border-radius: 12px;
+            border: 1px solid #1e293b;
+        }
+
+        .team-member strong {
+            color: #ffffff;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .team-member span {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Footer Elegant con Llamado a la Acción */
         footer {
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem 4rem 2rem;
+            border-top: 1px solid #1e293b;
+            background: #090a0f;
+        }
+
+        .footer-cta h2 {
+            font-size: 2.2rem;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-cta p {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-copy {
+            margin-top: 3rem;
             color: #475569;
             font-size: 0.9rem;
             border-top: 1px solid #1e293b;
-            background: #090a0f;
+            padding-top: 2rem;
         }
     </style>
 </head>
@@ -277,9 +365,9 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>DEIKER SUAREZ</h1>
-                <p>Editor de Video Experto, Diseñador y Fundador de <strong>DEKAP</strong>. Apasionado por la creación de narrativas visuales dinámicas, flujos de trabajo avanzados con Inteligencia Artificial, efectos de sonido inmersivos (SFX) y subtítulos de alto impacto que maximizan la retención.</p>
+                <p>Soy Deiker Suárez. Vivo obsesionado por la historia, por cómo se estructura y por el impacto emocional que deja en el espectador. En el montaje audiovisual, entiendo perfectamente que <strong>cada detalle importa</strong>. Un frame de más, un efecto de sonido (SFX) fuera de tiempo o una mala selección de ritmo pueden potenciar o destruir por completo el mensaje de un video.</p>
+                <p>Cuento con amplia experiencia editando con precisión quirúrgica para <strong>equipos y campañas deportivas, supermercados, luncherías, marcas personales, videos testimoniales, resúmenes de eventos, teasers de intriga y producciones de XV años</strong>. Además, integro herramientas de <strong>Inteligencia Artificial (IA)</strong> avanzadas para el diseño de efectos visuales únicos y transiciones fluidas que elevan el estándar técnico de cada entrega.</p>
                 <div class="cta-buttons">
-                    <!-- Enlace directo a tu WhatsApp (Modifica el número si lo requieres) -->
                     <a href="https://wa.me/584120000000?text=Hola%20Deiker,%20vi%20tu%20portafolio%20y%20me%20interesa%20un%20proyecto" target="_blank" class="btn btn-primary">
                         Contactar por WhatsApp
                     </a>
@@ -288,8 +376,8 @@
             </div>
             <div class="hero-image">
                 <div class="profile-wrapper">
-                    <!-- Carga tu foto real guardándola en la carpeta assets como mi-foto.jpg -->
-                    <img src="assets/mi-foto.jpg" alt="Deiker Suarez" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
+                    <!-- Enlace directo oficial de tu foto en Google Drive ya integrado -->
+                    <img src="https://drive.google.com/uc?export=view&id=1e1ELAB1PNpcg5FGksEIizmW-h8REhDNY" alt="Deiker Suarez" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
                 </div>
             </div>
         </div>
@@ -365,8 +453,8 @@
                     <iframe src="https://drive.google.com/file/d/1r_62HagX0EHkrUTT6XT-Ut3zqYOnVCN8/preview" allow="autoplay"></iframe>
                 </div>
                 <div class="video-info">
-                    <h3>Identidad Institucional (DEKAP)</h3>
-                    <p>Contenido orgánico de marca estructurado con subtítulos dinámicos de alto nivel, cortes perfectos y diseño de efectos de sonido (SFX).</p>
+                    <h3>Identidad Orgánica</h3>
+                    <p>Contenido orgánico estructurado con subtítulos dinámicos de alto nivel, cortes perfectos y diseño de efectos de sonido (SFX).</p>
                 </div>
             </div>
 
@@ -404,10 +492,41 @@
 
         </div>
 
+        <!-- SECCIÓN: DEKAP AGENCY -->
+        <div class="dekap-section">
+            <h3>DEKAP</h3>
+            <p>Además de mi trabajo independiente como editor, lidero <strong>DEKAP</strong>, una agencia audiovisual y de marketing completa donde llevamos tu marca a otro nivel. Ofrecemos servicios full-scale de: <strong>Grabación Profesional, Planificación Estratégica, Gestión y Optimización de Anuncios (Ads)</strong>, y producción en equipo[cite: 4]. Conectamos creatividad con estrategia para asegurar que cada contenido cumpla objetivos comerciales reales.</p>
+            
+            <div class="dekap-team">
+                <div class="team-member">
+                    <strong>Deiker</strong>
+                    <span>Líder operativo, Edición Pro, Diseño & Ads[cite: 4]</span>
+                </div>
+                <div class="team-member">
+                    <strong>Keren</strong>
+                    <span>Estudiante de Comunicación Social, Imagen & Locución[cite: 4]</span>
+                </div>
+                <div class="team-member">
+                    <strong>Abner</strong>
+                    <span>Estudiante de Comunicación Social, Creativo & Voz en off[cite: 4]</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 
+    <!-- FOOTER CON TU NUEVO CTA -->
     <footer>
-        <p>&copy; 2026 Deiker Suarez | Diseñado para Alta Conversión e Impacto Audiovisual.</p>
+        <div class="footer-cta">
+            <h2>¿Listo para contar tu historia con impacto?</h2>
+            <p>Dale a tus videos el ritmo, el sonido y el valor que tu audiencia merece.</p>
+            <a href="https://wa.me/584120000000?text=Hola%20Deiker,%20vi%20tu%20portafolio%20y%20me%20interesa%20un%20proyecto" target="_blank" class="btn btn-primary">
+                Hablemos por WhatsApp
+            </a>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2026 Deiker Suarez | Apasionado por la historia y por cómo se cuenta.</p>
+        </div>
     </footer>
 
 </body>
