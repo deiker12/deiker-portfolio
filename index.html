@@ -3,221 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deiker Suárez | Editor de Video Profesional & Storyteller</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Deiker Suarez | Portafolio de Edición de Video</title>
+    <style>
+        /* Estilos Base Modernos y Oscuros */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #0d0e12;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, #161922 0%, #0d0e12 100%);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 10px;
+            color: #f8fafc;
+        }
+
+        /* Grid para Videos Verticales (Estilo Reels/TikTok) */
+        .vertical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Grid para Videos Horizontales */
+        .horizontal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 600px) {
+            .horizontal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Tarjeta de Video */
+        .video-card {
+            background-color: #161922;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-container {
+            position: relative;
+            background-color: #000;
+            width: 100%;
+        }
+
+        /* Proporciones de aspecto nativas */
+        .vertical-grid .video-container {
+            aspect-ratio: 9 / 16;
+        }
+
+        .horizontal-grid .video-container {
+            aspect-ratio: 16 / 9;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-info {
+            padding: 1.2rem;
+        }
+
+        .video-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+        }
+
+        .video-info p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            font-weight: 300;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navegación -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">DS</a>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#portafolio">Portafolio</a></li>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#dekap">DEKAP Agency</a></li>
-                <li><a href="https://wa.me/584127005624" target="_blank" class="nav-btn">Contáctame</a></li>
-            </ul>
-        </div>
-    </nav>
+    <header>
+        <h1>DEIKER SUAREZ</h1>
+        <p>Editor de Video & Diseñador Digital. Especializado en contenido de alto impacto, storytelling dinámico y flujos de trabajo con Inteligencia Artificial.</p>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <div class="badge">
-                <span class="pulse"></span> Disponible para nuevos proyectos
-            </div>
-            <h1>Deiker Suárez<br><span class="gradient-text">Video Editor & Storyteller</span></h1>
-            <p class="subtitle">Edición Dinámica • SFX • Storytelling Visual</p>
-            <p class="description">
-                Apasionado por la historia y por cómo se cuenta. Creo firmemente que cada pequeño detalle importa: un corte, un sonido o un color pueden reforzar o dañar la narrativa de un video. Transformo tus ideas en contenido dinámico e inolvidable.
-            </p>
-            <div class="hero-buttons">
-                <a href="https://wa.me/584127005624" target="_blank" class="btn-primary">💬 Hablemos por WhatsApp</a>
-                <a href="#portafolio" class="btn-secondary">▶ Ver Portafolio</a>
-            </div>
-        </div>
-    </section>
+    <div class="container">
 
-    <!-- Portafolio -->
-    <section id="portafolio" class="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Mi Trabajo</span>
-                <h2>Portafolio Audiovisual</h2>
-                <p>Haz clic en cualquier video para reproducirlo con audio a pantalla completa.</p>
-            </div>
+        <!-- SECCIÓN VERTICAL -->
+        <h2 class="section-title">Formato Vertical (Reels / Shorts / TikTok)</h2>
+        <div class="vertical-grid">
 
-            <!-- SECCIÓN VERTICAL (REELS / TIKTOKS) -->
-            <div class="portfolio-section">
-                <h3 class="format-title">📱 Formato Vertical (Reels / Shorts / TikToks)</h3>
-                <div class="portfolio-grid grid-vertical">
-                    <!-- Video Vertical 1 -->
-                    <div class="portfolio-item vertical" data-video="assets/vertical1.mp4">
-                        <div class="video-wrapper">
-                            <video autoplay loop muted playsinline preload="metadata" src="https://drive.google.com/file/d/1t9d_hAbaMN4c5_iZDcrxrRpTjMCEcEAt/view?usp=sharing"></video>
-                            <div class="play-overlay">▶</div>
-                            <div class="item-info">
-                                <h3>Campaña Deportiva</h3>
-                                <span>Edición Dinámica & Transiciones IA</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Video Vertical 2 -->
-                    <div class="portfolio-item vertical" data-video="assets/vertical2.mp4">
-                        <div class="video-wrapper">
-                            <video autoplay loop muted playsinline preload="metadata" src="assets/vertical2.mp4"></video>
-                            <div class="play-overlay">▶</div>
-                            <div class="item-info">
-                                <h3>Supermercados / Retail</h3>
-                                <span>Ritmo & Contenido Comercial</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Video Vertical 3 -->
-                    <div class="portfolio-item vertical" data-video="assets/vertical3.mp4">
-                        <div class="video-wrapper">
-                            <video autoplay loop muted playsinline preload="metadata" src="assets/vertical3.mp4"></video>
-                            <div class="play-overlay">▶</div>
-                            <div class="item-info">
-                                <h3>Marca Personal</h3>
-                                <span>Storytelling & Subtítulos Animados</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Video Vertical 4 -->
-                    <div class="portfolio-item vertical" data-video="assets/vertical4.mp4">
-                        <div class="video-wrapper">
-                            <video autoplay loop muted playsinline preload="metadata" src="assets/vertical4.mp4"></video>
-                            <div class="play-overlay">▶</div>
-                            <div class="item-info">
-                                <h3>Luncherías & Gastronomía</h3>
-                                <span>Diseño de Sonido (SFX) Activo</span>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <source src="https://docs.google.com/uc?export=download&id=1t9d_hAbaMN4c5_iZDcrxrRpTjMCEcEAt" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Reel Dinámico con IA</h3>
+                    <p>Edición ágil con subtítulos animados, efectos de sonido (SFX), motion graphics simples e integración de herramientas de Inteligencia Artificial.</p>
                 </div>
             </div>
 
-            <!-- SECCIÓN HORIZONTAL (PROMO / TEASERS) -->
-            <div class="portfolio-section" style="margin-top: 60px;">
-                <h3 class="format-title">🎬 Formato Horizontal (Teasers / Promos / Eventos)</h3>
-                <div class="portfolio-grid grid-horizontal">
-                    <!-- Video Horizontal 1 -->
-                    <div class="portfolio-item horizontal" data-video="assets/horizontal1.mp4">
-                        <div class="video-wrapper">
-                            <video autoplay loop muted playsinline preload="metadata" src="assets/horizontal1.mp4"></video>
-                            <div class="play-overlay">▶</div>
-                            <div class="item-info">
-                                <h3>Teaser Promocional</h3>
-                                <span>Cinematográfico & Efectos con IA</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Video Horizontal 2 -->
-                    <div class="portfolio-item horizontal" data-video="assets/horizontal2.mp4">
-                        <div class="video-wrapper">
-                            <video autoplay loop muted playsinline preload="metadata" src="assets/horizontal2.mp4"></video>
-                            <div class="play-overlay">▶</div>
-                            <div class="item-info">
-                                <h3>Resumen XV Años / Eventos</h3>
-                                <span>Narrativa Emocional & Transiciones</span>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <source src="https://docs.google.com/uc?export=download&id=17aDQd-Jin3YWehXOOxpeE6ydbSbO6acD" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Reel Recap e Innovación</h3>
+                    <p>Resumen dinámico potenciado con textos animados avanzados, transiciones estilizadas y recursos generados por IA.</p>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <source src="https://docs.google.com/uc?export=download&id=1PwSoqdscE25e9Db3UGS48A6unjsZ7r_o" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Contenido Comercial - Flips</h3>
+                    <p>Formato publicitario moderno adaptado a redes sociales. Edición rítmica enfocada en retener la atención del espectador.</p>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <source src="https://docs.google.com/uc?export=download&id=10DNlWM6N2lzaIWxjmOYV1jPBzPlkJVPP" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Edición Deportiva</h3>
+                    <p>Ritmo acelerado, sincronización precisa de audio, transiciones agresivas y corrección de color para destacar la acción en el campo.</p>
+                </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <source src="https://docs.google.com/uc?export=download&id=1XzWOXiHcfKm2_BLhHijwoDCQbUvxNnqD" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Animación de Flyers</h3>
+                    <p>Transformación de piezas gráficas estáticas en contenido audiovisual dinámico mediante motion design.</p>
+                </div>
+            </div>
+
+            <!-- Video 6 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <source src="https://docs.google.com/uc?export=download&id=1r_62HagX0EHkrUTT6XT-Ut3zqYOnVCN8" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Reel de Agencia (DEKAP)</h3>
+                    <p>Muestra completa de identidad de marca con subtítulos dinámicos personalizados, diseño sonoro inmersivo y animaciones fluidas.</p>
                 </div>
             </div>
 
         </div>
-    </section>
 
-    <!-- Sobre Mí -->
-    <section id="sobre-mi" class="about">
-        <div class="container about-wrapper">
-            <div class="about-visual">
-                <div class="image-box">
-                    <img src="assets/mi-foto.jpg" alt="Deiker Suárez" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="placeholder-img" style="display:none;">Coloca tu foto aquí (mi-foto.jpg)</div>
+        <!-- SECCIÓN HORIZONTAL -->
+        <h2 class="section-title">Formato Horizontal (YouTube / Corporativo / Promo)</h2>
+        <div class="horizontal-grid">
+
+            <!-- Video Horizontal 1 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <source src="https://docs.google.com/uc?export=download&id=1XgmX37Zg8Dr4BI-cswNOTiaTn9BqHPIn" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Video Promocional de Evento</h3>
+                    <p>Producción de formato largo armada para capturar la energía, logística y momentos clave de eventos a gran escala. Estructura narrativa sólida.</p>
                 </div>
             </div>
-            <div class="about-text">
-                <span class="section-tag">Filosofía de Trabajo</span>
-                <h3>Sobre mí</h3>
-                <p>Soy Deiker Suárez. Vivo obsesionado por la historia, por cómo se estructura y por el impacto emocional que deja en el espectador. En el montaje audiovisual, entiendo perfectamente que **cada detalle importa**. Un frame de más, un efecto de sonido (SFX) fuera de tiempo o una mala selección de ritmo pueden potenciar o destruir por completo el mensaje de un video.</p>
-                <p>Cuento con amplia experiencia editando con precisión quirúrgica para **equipos y campañas deportivas, supermercados, luncherías, marcas personales, videos testimoniales, resúmenes de eventos, teasers de intriga y producciones de XV años**. Además, integro herramientas de **Inteligencia Artificial (IA)** avanzadas para el diseño de efectos visuales únicos y transiciones fluidas que elevan el estándar técnico de cada entrega.</p>
-                <div class="skills-tags">
-                    <span>Edición Dinámica</span>
-                    <span>Diseño de Sonido (SFX)</span>
-                    <span>Storytelling Avanzado</span>
-                    <span>Subtítulos Creativos</span>
-                    <span>Transiciones con IA</span>
-                    <span>Corrección de Color</span>
+
+            <!-- Video Horizontal 2 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <video controls preload="metadata">
+                        <source src="https://docs.google.com/uc?export=download&id=15mnSJQL0vdc1WTXn96CRlPpk6pF5OkzO" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>Comercial de Producto - Cubitt</h3>
+                    <p>Edición limpia, estética de nivel corporativo comercial, manejo de encuadres y ritmo enfocado al marketing de producto y branding.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Sección Especial Reducida: DEKAP -->
-    <section id="dekap" class="dekap-section">
-        <div class="container">
-            <div class="dekap-card">
-                <div class="dekap-content">
-                    <span class="agency-tag">¿Buscas una solución integral?</span>
-                    <h2>DEKAP Agency</h2>
-                    <p>Además de mi trabajo independiente como editor, lidero **DEKAP**, una agencia audiovisual y de marketing completa donde llevamos tu marca a otro nivel. Ofrecemos servicios full-scale de: <strong>Grabación Profesional, Planificación Estratégica, Gestión y Optimización de Anuncios (Ads)</strong>, y producción en equipo.</p>
-                    <a href="https://wa.me/584127005624" target="_blank" class="dekap-btn">Consultar Servicios de Agencia 🚀</a>
-                </div>
-            </div>
         </div>
-    </section>
 
-    <!-- Footer / Cierre -->
-    <footer class="footer">
-        <div class="container">
-            <h2>¿Listo para contar tu historia con impacto?</h2>
-            <p>Dale a tus videos el ritmo, el sonido y el valor que tu audiencia merece.</p>
-            <div class="footer-buttons">
-                <a href="https://wa.me/584127005624" target="_blank" class="btn-primary">📲 Escríbeme a WhatsApp</a>
-            </div>
-            <p class="copy">© 2026 Deiker Suárez. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- Reproductor Modal -->
-    <div id="videoModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content">
-            <video id="modalVideo" controls playsinline></video>
-        </div>
     </div>
 
-    <script>
-        const modal = document.getElementById("videoModal");
-        const modalVideo = document.getElementById("modalVideo");
-        const closeBtn = document.querySelector(".close-modal");
+    <footer>
+        <p>&copy; 2026 Deiker Suarez. Todos los derechos reservados.</p>
+    </footer>
 
-        document.querySelectorAll(".portfolio-item").forEach(item => {
-            item.addEventListener("click", function() {
-                const videoSrc = this.getAttribute("data-video");
-                modalVideo.src = videoSrc;
-                modal.classList.add("active");
-                modalVideo.play();
-            });
-        });
-
-        const closeModalFunc = () => {
-            modal.classList.remove("active");
-            modalVideo.pause();
-            modalVideo.src = "";
-        };
-
-        closeBtn.addEventListener("click", closeModalFunc);
-        modal.addEventListener("click", (e) => { if (e.target === modal) closeModalFunc(); });
-    </script>
 </body>
 </html>
