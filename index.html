@@ -15,7 +15,7 @@
 
         body {
             background-color: #06070a;
-            /* Textura de rejilla estilo software de edición con animación de movimiento */
+            /* Textura de rejilla optimizada y acelerada */
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
@@ -23,28 +23,40 @@
             color: #e2e8f0;
             line-height: 1.6;
             overflow-x: hidden;
-            animation: backgroundScroll 60s linear infinite;
+            position: relative;
+            animation: backgroundScroll 25s linear infinite; /* Movimiento más rápido y dinámico */
         }
 
-        /* Movimiento ultra lento para el fondo */
+        /* Capa extra: Efecto cinemático de líneas de escaneo (Scanlines) para dar textura de monitor de edición */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+            z-index: 99999;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+        }
+
         @keyframes backgroundScroll {
             0% { background-position: 0px 0px; }
             100% { background-position: 40px 40px; }
         }
 
-        /* Hero / Header con Luces Ambientales en movimiento continuo */
+        /* Hero con Luces Ambientales más vivas y fluidas */
         .hero {
-            min-height: 85vh;
+            min-height: 95vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 5rem 2rem;
-            background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, rgba(6, 7, 10, 0) 50%),
-                        radial-gradient(circle at 20% 80%, rgba(37, 211, 102, 0.05) 0%, rgba(6, 7, 10, 0) 50%);
+            background: radial-gradient(circle at 85% 20%, rgba(59, 130, 246, 0.2) 0%, rgba(6, 7, 10, 0) 60%),
+                        radial-gradient(circle at 15% 85%, rgba(37, 211, 102, 0.08) 0%, rgba(6, 7, 10, 0) 60%);
             background-size: 200% 200%;
             position: relative;
             border-bottom: 1px solid #1e293b;
-            animation: ambientGlow 25s ease infinite alternate;
+            animation: ambientGlow 15s ease infinite alternate;
         }
 
         @keyframes ambientGlow {
@@ -76,11 +88,11 @@
         }
 
         .hero-text h1 {
-            font-size: 4rem;
+            font-size: 4.2rem;
             font-weight: 900;
             letter-spacing: -1.5px;
             line-height: 1.05;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -90,29 +102,43 @@
             font-size: 1.8rem;
             font-weight: 600;
             color: #3b82f6;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             letter-spacing: -0.5px;
         }
 
-        .hero-text p.tagline {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            max-width: 550px;
+        /* Tarjeta de Biografía integrada al inicio con opacidad extra (0.85) */
+        .bio-card-hero {
+            background: rgba(10, 11, 18, 0.85); 
+            border: 1px solid rgba(30, 41, 59, 0.7);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+            margin-bottom: 2rem;
         }
 
-        @media (max-width: 900px) {
-            .hero-text p.tagline {
-                margin: 0 auto 1.5rem auto;
-            }
+        .bio-card-hero p {
+            color: #94a3b8;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            text-align: justify; /* Textos perfectamente justificados */
+            margin-bottom: 1.2rem;
+        }
+
+        .bio-card-hero p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bio-card-hero strong {
+            color: #ffffff;
+            font-weight: 600;
         }
 
         /* Botones de Acción Estilizados */
         .cta-buttons {
             display: flex;
             gap: 1.2rem;
-            margin-top: 2.5rem;
+            margin-top: 2rem;
         }
 
         @media (max-width: 900px) {
@@ -140,7 +166,7 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-4px);
+            transform: translateY(-4px) scale(1.02);
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
         }
 
@@ -153,11 +179,11 @@
 
         .btn-secondary:hover {
             background-color: #334155;
-            transform: translateY(-4px);
+            transform: translateY(-4px) scale(1.02);
             border-color: #475569;
         }
 
-        /* Contenedor de la Foto de Perfil + Aura Glow */
+        /* Foto de Perfil + Aura */
         .hero-image {
             display: flex;
             justify-content: center;
@@ -171,10 +197,10 @@
             height: 340px;
             background: linear-gradient(45deg, #3b82f6, #25d366);
             border-radius: 50%;
-            filter: blur(40px);
-            opacity: 0.3;
+            filter: blur(45px);
+            opacity: 0.35;
             z-index: 1;
-            animation: pulseGlow 6s infinite alternate ease-in-out;
+            animation: pulseGlow 5s infinite alternate ease-in-out;
         }
 
         .profile-wrapper {
@@ -184,10 +210,10 @@
             height: 320px;
             border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             background: linear-gradient(45deg, #3b82f6, #25d366);
-            animation: morphing 8s infinite alternate ease-in-out;
+            animation: morphing 7s infinite alternate ease-in-out;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.15);
         }
 
         .profile-wrapper img {
@@ -204,15 +230,15 @@
         }
 
         @keyframes pulseGlow {
-            0% { transform: scale(0.9); opacity: 0.2; }
-            100% { transform: scale(1.1); opacity: 0.4; }
+            0% { transform: scale(0.95); opacity: 0.25; }
+            100% { transform: scale(1.15); opacity: 0.45; }
         }
 
         /* Contenedor General */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 6rem 2rem;
+            padding: 4rem 2rem 6rem 2rem;
         }
 
         .section-header {
@@ -261,11 +287,11 @@
 
         /* Tarjetas de Contenido Audiovisual Neon Premium */
         .video-card {
-            background: rgba(15, 17, 26, 0.7);
+            background: rgba(15, 17, 26, 0.75);
             border: 1px solid #1e293b;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             display: flex;
             flex-direction: column;
@@ -273,9 +299,9 @@
         }
 
         .video-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(59, 130, 246, 0.5);
-            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+            transform: translateY(-12px);
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
         }
 
         .video-box {
@@ -304,7 +330,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            background: linear-gradient(180deg, rgba(15, 17, 26, 0) 0%, rgba(9, 10, 15, 0.8) 100%);
+            background: linear-gradient(180deg, rgba(15, 17, 26, 0) 0%, rgba(9, 10, 15, 0.85) 100%);
         }
 
         .video-info h3 {
@@ -315,7 +341,6 @@
             letter-spacing: -0.2px;
         }
 
-        /* Justificación estética del texto en tarjetas */
         .video-info p {
             font-size: 0.98rem;
             color: #94a3b8;
@@ -324,41 +349,13 @@
             text-align: justify;
         }
 
-        /* Nueva Sección de Biografía Completa (Movida aquí abajo) */
-        .bio-section {
-            background: linear-gradient(135deg, rgba(10, 11, 18, 0.6) 0%, rgba(15, 17, 26, 0.6) 100%);
-            border: 1px solid #1e293b;
-            border-radius: 28px;
-            padding: 3.5rem;
-            margin-bottom: 4rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .bio-section p {
-            color: #94a3b8;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            text-align: justify;
-            margin-bottom: 1.5rem;
-        }
-
-        .bio-section p:last-child {
-            margin-bottom: 0;
-        }
-
-        .bio-section strong {
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        /* Sección de la Agencia DEKAP */
+        /* Sección de la Agencia DEKAP con opacidad extra */
         .dekap-section {
-            background: linear-gradient(135deg, rgba(15, 17, 26, 0.8) 0%, rgba(22, 25, 34, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(15, 17, 26, 0.85) 0%, rgba(22, 25, 34, 0.85) 100%);
             border: 1px solid #1e293b;
             border-radius: 28px;
             padding: 3.5rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
@@ -385,7 +382,6 @@
             gap: 12px;
         }
 
-        /* Justificación estética del texto en Agencia */
         .dekap-section p {
             color: #94a3b8;
             font-size: 1.15rem;
@@ -444,13 +440,19 @@
 </head>
 <body>
 
-    <!-- SECCIÓN HERO COMPACTA Y ENFOCADA -->
+    <!-- SECCIÓN SOBRE MÍ / HERO RESTAURADA AL INICIO -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
                 <h1>DEIKER SUAREZ</h1>
                 <div class="subtitle">Editor de Videos</div>
-                <p class="tagline">Apasionado por la estructura de las historias y por el impacto emocional preciso que transforma a cada espectador.</p>
+                
+                <!-- Tarjeta contenedora con más opacidad y texto justificado -->
+                <div class="bio-card-hero">
+                    <p>Soy Deiker Suárez. Vivo obsesionado por la historia, por cómo se estructura y por el impacto emocional que deja en el espectador. En el montaje audiovisual, entiendo perfectamente que <strong>cada detalle importa</strong>. Un frame de más, un efecto de sonido (SFX) fuera de tiempo o una mala selección de ritmo pueden potenciar o destruir por completo el mensaje de un video.</p>
+                    <p>Cuento con amplia experiencia editando con precisión quirúrgica para <strong>equipos y campañas deportivas, supermercados, luncherías, marcas personales, videos testimoniales, resúmenes de eventos, teasers de intriga y producciones de XV años</strong>. Además, integro herramientas de <strong>Inteligencia Artificial (IA)</strong> avanzadas para el diseño de efectos visuales únicos y transiciones fluidas que elevan el estándar técnico de cada entrega.</p>
+                </div>
+
                 <div class="cta-buttons">
                     <a href="https://wa.me/584127005624?text=Hola%20Deiker,%20vi%20tu%20portafolio%20y%20me%20interesa%20un%20proyecto" target="_blank" class="btn btn-primary">
                         Contactar por WhatsApp
@@ -543,6 +545,7 @@
 
         </div>
 
+
         <!-- FORMATO HORIZONTAL -->
         <div class="section-header">
             <h2>Formato Horizontal (YouTube / Corporativo / Spots)</h2>
@@ -572,15 +575,6 @@
                 </div>
             </div>
 
-        </div>
-
-        <!-- SECCIÓN BIOGRAFÍA (MOVIDA DESPUÉS DE LOS PROYECTOS) -->
-        <div class="section-header">
-            <h2>Sobre Mí</h2>
-        </div>
-        <div class="bio-section">
-            <p>Soy Deiker Suárez. Vivo obsesionado por la historia, por cómo se estructura y por el impacto emocional que deja en el espectador. En el montaje audiovisual, entiendo perfectamente que <strong>cada detalle importa</strong>. Un frame de más, un efecto de sonido (SFX) fuera de tiempo o una mala selección de ritmo pueden potenciar o destruir por completo el mensaje de un video.</p>
-            <p>Cuento con amplia experiencia editando con precisión quirúrgica para <strong>equipos y campañas deportivas, supermercados, luncherías, marcas personales, videos testimoniales, resúmenes de eventos, teasers de intriga y producciones de XV años</strong>. Además, integro herramientas de <strong>Inteligencia Artificial (IA)</strong> avanzadas para el diseño de efectos visuales únicos y transiciones fluidas que elevan el estándar técnico de cada entrega.</p>
         </div>
 
         <!-- SECCIÓN: DEKAP AGENCY -->
